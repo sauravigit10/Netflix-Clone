@@ -1,0 +1,81 @@
+.hero{
+    position: relative;
+    /* height: 60%; */
+    /* border: 1PX SOLID red; */
+}
+.banner-img
+{
+    /* height: 20%; */
+    width: 100%;
+    height: fit-content;
+    mask-image: linear-gradient(to right,transparent,black 75%);
+    -webkit-mask-image: linear-gradient(to right,transparent,black 75%);
+   
+}
+.hero-caption{
+    position: absolute;
+    width: 100%;
+    padding-left: 4%;
+    bottom: 0;
+}
+    .caption-img{
+        width: 30%;
+        max-width: 80%;
+        margin-bottom: 10px;
+        position: relative;
+
+    }
+    .hero-caption p{
+        max-width: 700px;
+        font-size: 17px;
+        position: relative;
+        /* margin-bottom: 30px; */
+    }
+.hero-btns
+{
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+    position: relative;
+
+}
+
+.hero-btns .btn img{
+    width: 25px;
+}
+
+.hero-btns .btn
+{
+    border: 0;
+    outline: 0;
+    padding: 8px 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    background: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.hero-btns .btn.dark-btn
+{
+    color: white;
+    background: #6d6d6d;
+
+}
+
+.hero-btns .btn:hover{
+    background: #ffffffbf;
+}
+
+.hero-btns .btn.dark-btn:hover{
+    background: #6d6d6e66;
+}
+.more-cards
+{
+    padding-left:4%;
+    margin-bottom: 10px;
+    position:relative;
+}
