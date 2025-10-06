@@ -1,12 +1,48 @@
-# React + Vite
+# 🎬 Netflix-Clone
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive Netflix‑style web app built with **React.js** and **Vite** that fetches and displays movies and TV shows using the TMDb API.  
+Features include dynamic content loading, category browsing, and a sleek user interface.  
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📂 Table of Contents
 
-## Expanding the ESLint configuration
+- [Demo / Screenshots](#demo--screenshots)  
+- [Features](#features)  
+- [Tech Stack](#tech-stack)  
+- [Getting Started](#getting-started)  
+- [Environment Variables](#environment-variables)  
+- [Project Structure](#project-structure)  
+- [Future Improvements](#future-improvements)  
+- [License & Author](#license--author)  
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🖼️ Demo / Screenshots
+
+> (Add screenshots or a live demo link here)  
+> Example:  
+> ![Home Page](screenshots/home.png)  
+> ![Movie Detail](screenshots/detail.png)  
+
+---
+
+## ✨ Features
+
+- Browse trending / popular movies & TV shows  
+- Category-based rendering (e.g. Action, Comedy)  
+- Dynamic data fetching from TMDb API  
+- Responsive layout for desktop & mobile  
+- Clean UI inspired by Netflix  
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer       | Technologies                         |
+|-------------|--------------------------------------|
+| Frontend    | React.js, Vite                       |
+| Styling     | CSS / (you can add Tailwind, Styled Components, etc.) |
+| API         | [TMDb API](https://www.themoviedb.org/documentation/api) |
+
+---
