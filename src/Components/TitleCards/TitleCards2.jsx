@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import './TitleCards.css'
 import cards_data2 from '../../assets/Cards/Cards_data2'
+import {Link} from 'react-router-dom'
 
 
 const TitleCards2 = () => {
@@ -39,7 +40,7 @@ fetch('https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1', op
      <div className="card-list" ref={cardsRef}>
         {apiData.map((card, index) => (
 
-          <div className="card" key={index}>
+          <Link style={{textDecoration:"none"}} to={`/player/${card.id}`} className="card" key={index}>
             <img src={`https://image.tmdb.org/t/p/w500`+card.backdrop_path} alt={card.name} />
             <div className="card-info">
               <p className="card-title">{card.title}</p>
@@ -55,7 +56,7 @@ fetch('https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1', op
                 </div>
               </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
       </div>
