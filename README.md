@@ -19,8 +19,6 @@ Features include dynamic content loading, category browsing, and a sleek user in
 ---
 
 ## 🖼️ Demo / Screenshots
-
-> (Add screenshots or a live demo link here)  
 > Example:  
 > ![Home Page](screenshots/home.png)  
 > ![Movie Detail](screenshots/detail.png)  
