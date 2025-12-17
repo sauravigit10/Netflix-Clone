@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import './Login.css';
 import logo from '../../assets/logo.png';
 import netflix_spinner from '../../assets/netflix_spinner.gif';
+import {auth } from '../../firebase';
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const [signState, setSign] = useState("Sign In");
@@ -12,44 +14,31 @@ const Login = () => {
   const [rememberMe, setRememberMe] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-
   const navigate = useNavigate();
+  
 
-  const user_auth = (event) => {
+
+  const handleSignUp = (e) => {
+    e.preventDefault();   
+      const handleSubmit = (event) => {
     event.preventDefault();
     setLoading(true);
     setError("");
-
-    if (signState === "Sign In") {
-      const storedUser = JSON.parse(localStorage.getItem("netflix-user"));
-      console.log("Logging in with:", { email, password });
-
-      if (
-        storedUser &&
-        storedUser.email === email &&
-        storedUser.password === password
-      ) {
-        alert("Login successful!");
-        navigate("/home");
-        return;
-      } else {
-        setError("Invalid email or password!");
-      }
-
-    } else {
-      const newUser = { name, email, password };
-      localStorage.setItem("netflix-user", JSON.stringify(newUser));
-      console.log("Signing up with:", { name, email, password });
-
-      alert("Signup successful!");
-      setSign("Sign In"); 
-      setName("");
-      setEmail("");
-      setPassword("");
+    setTimeout(() => {
+      alert(`${signState} form submitted!`);
+      setLoading(false);
+    }, 1000);
+  }    
+    if(signState==="Sign Up"){
+      createUserWithEmailAndPassword(auth,email,password,name).then(value=>alert("sign up successful")).catch(err=>alert(err.message));
     }
+     else{
+      signInWithEmailAndPassword(auth,email,password).then(value=>{alert("sign in successful");navigate('/Home')}).catch(err=>alert(err.message));
 
-    setLoading(false);
+  
+
   };
+}
 
   return (
     loading ? (
@@ -62,7 +51,7 @@ const Login = () => {
 
         <div className="login-form">
           <h1>{signState}</h1>
-          <form onSubmit={user_auth}>
+          <form onSubmit={handleSignUp}>
             {signState === 'Sign Up' && (
               <input
                 value={name}
@@ -89,7 +78,7 @@ const Login = () => {
               required
             />
 
-            <button type='submit'>{signState}</button>
+            <button type='submit' onSubmit={handleSignUp}>{signState}</button>
 
             {error && <p className="error-message">{error}</p>}
 
@@ -123,5 +112,6 @@ const Login = () => {
     )
   );
 };
+
 
 export default Login;

@@ -32,7 +32,7 @@ useEffect(()=>{
 
   return (
     <div className='player'>
-      <img src={back_arrow_icon} alt="" onClick={()=>{navigate(-2)}}/>
+      <img src={back_arrow_icon} alt="" onClick={()=>{navigate(-1)}}/>
       <iframe width="90%" height="90%" src={`https://www.youtube.com/embed/${apiData.key}`} frameborder="0" title="trailer" allowFullScreen></iframe>
       <div className='player-info'>
         <p>{apiData.published_at.slice(0,10)}</p>
